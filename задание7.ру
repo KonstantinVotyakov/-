@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+
+void Multiply(const int n, double matrixA[][3], double res[][3], double matrixP[], double matrixQ[]) {
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      for (int k = 0; k < n; k++) {
+        res[i][j] += matrixA[i][k] * matrixA[k][j];
+      }
+    }
+  }
+  
+  for (int i = 0; i < n; i++) {
+    double temp = 0.0;
+    for (int j = 0; j < n; j++) {
+      temp += res[i][j] * matrixP[j];
+    }
+    res[i][0] = temp;
+  }
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      res[i][j] = res[i][j] * matrixQ[i];
+    }
+  }
+}
+int main() {
+  const int n = 3;
+  double matrixA[n][3] = { {1, 2, 3}, {1, 2, 1}, {3, 2, 0} };
+  double matrixP[n] = { 0.1, 1.7, -1.5 };
+  double matrixQ[n] = { -1.6, 0.8, 1.1 };
+  double res[n][3] = {};
+  float sum = 0;
+
+  Multiply(n, matrixA, res, matrixP, matrixQ);
+
+  for (int i = 0; i < n; ++i) {
+    for (int j = 0; j < n; ++j) {
+      if (j == 0)
+        sum += res[i][j];
+    }
+  }
+  cout << sum;
+  return 0;
+}
