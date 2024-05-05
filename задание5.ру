@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <cmath>
+#include <string>
+
+using namespace std;
+
+int main() {
+  setlocale(LC_ALL, "rus");
+  int n = 10;
+  vector<double> x = { 0.1, 0.3, 0.4, 0.7, 1 };
+  vector<double> S(x.size(), 0.0);
+
+  for (int i = 0; i < x.size(); i++) {
+    for (int k = 1; k <= n; k++) {
+      double term = pow(-1, k + 1) * pow(x[i], 2 * k + 1) / (2 * k + 3);
+      S[i] += term;
+    }
+  }
+
+  string mns(24, '-');
+  cout << mns << endl; cout << "\tТАБЛИЦА\n      РЕЗУЛЬТАТОВ\n"; cout << mns << endl;
+
+  for (int i = 0; i < x.size(); i++) {
+    cout << fixed << setprecision(2);
+    cout << setw(5) << "x = "<< x[i] << "\tS = "<<S[i] << endl;
+  }
+  return 0;
+}
