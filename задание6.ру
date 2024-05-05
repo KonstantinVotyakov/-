@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int Summa(vector<int> arrT, int count) {
+  int summ = 0;
+  for (int i = 0; i < count; i++)
+    summ += arrT[i];
+  return summ;
+}
+
+vector<int> ArrayT(vector<int> arrD, int count) {
+
+  for (int i = 0; i < count; i++) {
+    int num;
+    cin >> num;
+    arrD.push_back(num);
+  }
+  for (int i = 0; i < count; i++)
+    cout << arrD[i] << " ";
+  vector<int> arrayT;
+  for (int i = 1; i < arrD.size(); i+=2) {
+    arrayT.push_back(arrD[i]);
+  }
+
+  return arrayT;
+}
+int main() {
+  setlocale(LC_ALL, "rus");
+  int count;
+  cout << "Введите количество элементов (до 25): "; cin >> count;
+  vector<int> arrayD;
+  
+    vector<int> result = ArrayT(arrayD, count);
+
+  cout << endl;
+  for (int i : result)
+    cout << i << " ";
+
+  int sum = Summa(result, result.size());
+  cout << "\n" << sum << endl;
+
+  cout << result.size() << endl;
+  return 0;
+}
