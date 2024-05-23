@@ -1,11 +1,11 @@
 import numpy as np
 N = 3
 
-A = np.genfromtxt('Lab8A.txt')
+A = np.genfromtxt('8.txt')
 print('Исходный массив A')
 print(A)
 
-B = np.genfromtxt('Lab8B.txt')
+B = np.genfromtxt('8.txt')
 print('Исходный массив B')
 print(B)
 print('Обратная матрица A')
