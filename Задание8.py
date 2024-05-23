@@ -26,7 +26,3 @@ for i in range (0,N):
     print('%f'%x1[i],end=' ')
 print('')
 print('\nDet(A)=%f'%np.linalg.det(A))
-
-
-
-значения 6 7 1
