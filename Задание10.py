@@ -22,3 +22,5 @@ for i in range (0,N):
     for j in range (0,N):
         print('%f'%X[i][j], end=' ')
     print('')
+
+v
