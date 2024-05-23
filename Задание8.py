@@ -29,4 +29,4 @@ print('\nDet(A)=%f'%np.linalg.det(A))
 
 
 
-значения 7 7 1
+значения 6 7 1
